@@ -1,0 +1,7 @@
+#!/bin/bash
+
+python logrotate_console.py server &
+PID=$!
+sleep 1
+PORT=$(env lsof -iTCP -sTCP:LISTEN -T | awk '{print $2,$9}' | grep $PID | cut -d " " -f2 | sed 's/\*://g')
+python logrotate_console.py client $PORT
