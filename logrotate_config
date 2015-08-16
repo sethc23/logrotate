@@ -1,0 +1,44 @@
+
+mock_log_dir/*.log {
+## EDIT CONFIGURATIONS BETWEEN COMMENTS
+## DO NOT MODIFY THESE COMMENTS IN ANY WAY
+## -------- TOP -----------
+	rotate 4
+	size 11
+	#maxsize 15
+	#weekly
+
+	dateext
+	dateformat .%Y.%m.%d.%s
+	#extension .log
+	#copy
+	copytruncate
+	compress
+	noolddir 
+	#delaycompress
+	nodelaycompress
+	nomissingok
+	notifempty
+	#maxage 90
+
+	#firstaction
+	#/bin/echo "firstaction executed w/ vars: "$@ > %(tty)s
+	#endscript
+
+	#prerotate
+	#/bin/echo "prerotate executed w/ vars: "$@ > %(tty)s
+	#endscript
+
+	#preremove
+	#/bin/echo "preremove executed w/ vars: "$@ > %(tty)s
+	#endscript
+
+	#postrotate
+	#/bin/echo "postrotate executed w/ vars: "$@ > %(tty)s
+	#endscript
+
+	#lastaction
+	#/bin/echo "lastaction executed w/ vars: "$@ > %(tty)s
+	#endscript
+## -------- BOTTOM --------
+}
